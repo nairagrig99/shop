@@ -1,0 +1,53 @@
+@import 'src/app/shared/styles/@mixins';
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 300px;
+  text-align: center;
+}
+
+.sidenav .mat-toolbar {
+  background: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background: white;
+  border-bottom: 1px solid black;
+  padding: 50px;
+}
+
+mat-icon {
+  color: black
+}
+
+.hidden {
+  display: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  @include flex-row-space-between;
+}
+
+.mat-nav-list {
+  &_desktop {
+    @include flex-row-space-evenly;
+    flex: 0.5;
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 15px;
+      font-weight: lighter;
+    }
+  }
+}

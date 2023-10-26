@@ -1,0 +1,46 @@
+.header {
+  &_image {
+    height: 500px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: none;
+      object-position: 30.2156% 84.8025%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background: #000000;
+      opacity: .2;
+      z-index: 1;
+      width: 100%;
+      height: inherit;
+    }
+  }
+
+  &_content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: white;
+    line-height: 2;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Atak', sans-serif;
+
+    h1 {
+      font-size: 45px;
+      font-weight: bold;
+      font-family: 'Atak', sans-serif;
+    }
+
+    p {
+      font-size: 30px;
+    }
+  }
+}
