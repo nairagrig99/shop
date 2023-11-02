@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+               [ngClass]="{hidden:!(isHandset$ | async)}"
+               fixedInViewport="false"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Bestsellers</a>
+      <a mat-list-item href="#">Rain Boots</a>
+      <a mat-list-item href="#">Weekend Boots</a>
+      <a mat-list-item href="#">Terrus Clogs</a>
+      <a mat-list-item href="#"> Shop All</a>
+      <a mat-list-item href="#">Values</a>
+
+      <mat-icon>shopping_cart</mat-icon>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>
+     <img src="../../../../assets/images/logo.png" width="200">
+      </span>
+      <mat-nav-list *ngIf="!(isHandset$ | async)" class="mat-nav-list_desktop">
+        <a mat-list-item href="#">Bestsellers</a>
+        <a mat-list-item href="#">Rain Boots</a>
+        <a mat-list-item href="#">Weekend Boots</a>
+        <a mat-list-item href="#">Terrus Clogs</a>
+        <a mat-list-item href="#"> Shop All</a>
+        <a mat-list-item href="#">Values</a>
+      </mat-nav-list>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-icon *ngIf="!(isHandset$ | async)">shopping_cart</mat-icon>
+    </mat-toolbar>
+    <ng-content></ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

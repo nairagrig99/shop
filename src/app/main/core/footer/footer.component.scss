@@ -1,0 +1,36 @@
+@import "src/app/shared/styles/@mixins";
+
+.footer {
+  &_section {
+    color: white;
+    background-color: #123026;
+    padding: 50px;
+    @include flex-row-space-evenly;
+
+    &_box {
+
+      @include flex-column;
+
+      &_route {
+        @include flex-column;
+
+        a {
+          text-decoration: none;
+          color: white;
+          line-height: 2;
+          font-size: 18px;
+          font-family: 'Atak', sans-serif;
+        }
+      }
+
+      img {
+        border: 1px solid black;
+        margin-bottom: 15px;
+      }
+
+      &:first-child h1 {
+        //max-width: min(100%, 350px);
+      }
+    }
+  }
+}
