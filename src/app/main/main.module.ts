@@ -8,9 +8,11 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
-import {AllShopComponent} from "./components/all-shop/all-shop.component";
 import {FooterComponent} from './core/footer/footer.component';
 import {HeaderComponent} from './core/header/header.component';
+import {BestSellersComponent} from './components/best-sellers/best-sellers.component';
+import {SharedModule} from "../shared/shared.module";
+import {HttpClientModule} from "@angular/common/http"
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -18,19 +20,21 @@ const route: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      {path: 'best-selling', component: AllShopComponent}
+      {path: 'best-selling', component: BestSellersComponent}
     ]
   }
 ]
 
 @NgModule({
-  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent],
+  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent],
 
   imports: [CommonModule, MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule, RouterModule.forChild(route)],
+    SharedModule,
+    HttpClientModule,
+    MatListModule, RouterModule.forChild(route)]
 })
 export class MainModule {
 }
