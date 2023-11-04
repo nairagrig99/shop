@@ -23,6 +23,5 @@ export class BestSellersComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new ProductsActionGet())
 
-    // this.products$ =
   }
 }

@@ -1,0 +1,18 @@
+@import "src/app/shared/styles/@mixins";
+
+.product {
+  &_card {
+    img {
+      width: 350px;
+    }
+
+    &_title {
+
+      font-weight: bold;
+    }
+  }
+}
+
+app-product-review {
+  @include flex-row;
+}

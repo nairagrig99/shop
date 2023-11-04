@@ -11,7 +11,6 @@ export const initialState = {
 }
 
 export const productReducer = (state: State<ProductState>, action: ProductsActionType) => {
-  console.log('reducerrrrrrrrrrrrrrr', action)
   switch (action.type) {
 
     case ProductsAction.GetSuccess:

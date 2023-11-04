@@ -1,0 +1,15 @@
+@import "src/app/shared/styles/@mixins";
+
+.product-review{
+  @include flex-row;
+  &div:nth-child(1){
+    @include flex-row;
+
+  }
+  &_yellow {
+    color: yellow;
+  }
+  &_black {
+    color: black;
+  }
+}
