@@ -3,16 +3,28 @@
 .product {
   &_card {
     img {
-      width: 350px;
+      max-inline-size: 100%;
+      block-size: auto;
     }
 
-    &_title {
+    &_description {
+      div{
+        margin-bottom: 10px;
+      }
+      &_title {
+        font-weight: bold;
+      }
 
-      font-weight: bold;
+      &_price {
+        font-size: 18px;
+      }
     }
+
   }
 }
 
 app-product-review {
   @include flex-row;
 }
+
+

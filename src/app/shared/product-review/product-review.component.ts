@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProductReviewComponent implements OnInit {
   @Input() review: number = 0;
-  public reviewNumbers: number[] = []
+  public reviewNumbers: number[] = [];
 
   ngOnInit(): void {
     this.fillReview();

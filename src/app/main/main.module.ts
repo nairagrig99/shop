@@ -13,6 +13,7 @@ import {HeaderComponent} from './core/header/header.component';
 import {BestSellersComponent} from './components/best-sellers/best-sellers.component';
 import {SharedModule} from "../shared/shared.module";
 import {HttpClientModule} from "@angular/common/http"
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -34,6 +35,8 @@ const route: Routes = [
     MatIconModule,
     SharedModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatListModule, RouterModule.forChild(route)]
 })
 export class MainModule {

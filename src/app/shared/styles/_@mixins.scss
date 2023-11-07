@@ -3,7 +3,7 @@
 }
 
 @mixin flex-column {
-  display: flex;
+  @include flex-row;
   flex-direction: column;
 }
 

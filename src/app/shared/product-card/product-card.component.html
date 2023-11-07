@@ -1,16 +1,24 @@
 <section class="product">
   <div class="product_card">
-    <div><img src="assets/images/products/{{product.image[0]}}"></div>
     <div>
-      <h3 class="product_card_title">{{product.title}}</h3>
-      <div class="product_card_reviews">
+      <img src="assets/images/products/{{product.image[0]}}">
+    </div>
+    <div class="product_card_description">
+      <h3 class="product_card_description_title">{{product.title}}</h3>
+      <div class="product_card_description_reviews">
         <app-product-review [review]="product.reviews"></app-product-review>
       </div>
-      <div class="product_card_price">{{product.price}}</div>
-      <div class="product_card_sizes">
-        <input type="number">
+      <div class="product_card_description_price">{{product.price}} <span>AMD</span></div>
+      <div class="product_card_description_sizes">
+        <app-select
+                    [control]="form.get('sizes')"
+                    [formControl]="form.get('sizes')"
+                    [type]="'number'"
+                    [sizeOptions]="product.size"
+        ></app-select>
+
       </div>
-      <button>Add to cart</button>
+      <app-button [title]="'Add to cart'"></app-button>
     </div>
   </div>
 </section>

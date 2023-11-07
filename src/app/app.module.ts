@@ -12,6 +12,7 @@ import {StoreRouterConnectingModule} from '@ngrx/router-store';
 import {environment} from "../environment/environment";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // StoreModule.forRoot(productReducer),
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({}),
     StoreModule.forFeature('products', productReducer),
     EffectsModule.forRoot([ProductEffect]),
