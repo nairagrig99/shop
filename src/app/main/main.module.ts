@@ -14,6 +14,7 @@ import {BestSellersComponent} from './components/best-sellers/best-sellers.compo
 import {SharedModule} from "../shared/shared.module";
 import {HttpClientModule} from "@angular/common/http"
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ProductBasketComponent } from './core/product-basket/product-basket.component';
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -27,7 +28,7 @@ const route: Routes = [
 ]
 
 @NgModule({
-  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent],
+  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent, ProductBasketComponent],
 
   imports: [CommonModule, MatToolbarModule,
     MatButtonModule,

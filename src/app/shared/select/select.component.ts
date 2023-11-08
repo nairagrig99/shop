@@ -33,7 +33,7 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
   };
 
   set optionValue(value: any) {
-    console.log('value', value);
+    // console.log('value', value);
     this.onChange(value);
     // this.onTouched(value);
   }

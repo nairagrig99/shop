@@ -15,9 +15,22 @@
       <a mat-list-item href="#">Values</a>
 
       <mat-icon>shopping_cart</mat-icon>
-
+  
     </mat-nav-list>
   </mat-sidenav>
+
+  <mat-sidenav class="sidenav"
+               [ngClass]="{hidden:!isOpen}"
+               fixedInViewport="true"
+               position="end"
+               [attr.role]="(isOpen ) ? 'dialog' : 'navigation'"
+               [mode]="(isOpen) ? 'over' : 'side'"
+               [opened]="isOpen">
+
+    <h1>BASKET</h1>
+
+  </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <span>
@@ -28,7 +41,7 @@
         <a mat-list-item href="#">Rain Boots</a>
         <a mat-list-item href="#">Weekend Boots</a>
         <a mat-list-item href="#">Terrus Clogs</a>
-        <a mat-list-item href="#"> Shop All</a>
+        <a mat-list-item href="#">Shop All</a>
         <a mat-list-item href="#">Values</a>
       </mat-nav-list>
       <button
@@ -39,9 +52,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <mat-icon *ngIf="!(isHandset$ | async)">shopping_cart</mat-icon>
+      <mat-icon (click)="basketToggle()">shopping_cart</mat-icon>
     </mat-toolbar>
     <ng-content></ng-content>
-
   </mat-sidenav-content>
+
 </mat-sidenav-container>
