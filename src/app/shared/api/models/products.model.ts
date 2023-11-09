@@ -3,7 +3,7 @@ export interface ProductsModel {
   title: string;
   description: string;
   price: string;
-  size: [],
+  size: number[],
   reviews: number;
   type: string;
   bestSelleres: boolean;

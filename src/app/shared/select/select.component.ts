@@ -19,8 +19,7 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
 
   @Input() type: string;
 
-  public productSizes: number [];
-  public optionValueModel: number [];
+  public optionValue: number;
 
   public onChange = (value: any) => {
   };
@@ -28,14 +27,9 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
   public onTouched = () => {
   };
 
-  get value(): any {
-    return this.optionValueModel;
-  };
-
-  set optionValue(value: any) {
-    // console.log('value', value);
+  public changeSelectedValue(value: number) {
     this.onChange(value);
-    // this.onTouched(value);
+    this.onTouched()
   }
 
   constructor() {
@@ -45,7 +39,8 @@ export class SelectComponent implements ControlValueAccessor, AfterViewInit {
   }
 
   public writeValue(value: any): void {
-    this.productSizes = value;
+    this.optionValue = value;
+    this.onChange(value);
   }
 
   registerOnChange(fn: any): void {

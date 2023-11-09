@@ -11,14 +11,14 @@
       <div class="product_card_description_price">{{product.price}} <span>AMD</span></div>
       <div class="product_card_description_sizes">
         <app-select
-                    [control]="form.get('sizes')"
                     [formControl]="form.get('sizes')"
                     [type]="'number'"
                     [sizeOptions]="product.size"
         ></app-select>
-
       </div>
-      <app-button [title]="'Add to cart'"></app-button>
+      <app-button [title]="'Add to cart'"
+      (onClick)="addProductToBasket(product)"
+      ></app-button>
     </div>
   </div>
 </section>

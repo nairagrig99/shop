@@ -1,4 +1,4 @@
-import {Component, forwardRef, Input} from '@angular/core';
+import {Component, EventEmitter, forwardRef, Input, Output} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
@@ -14,6 +14,9 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 export class ButtonComponent implements ControlValueAccessor {
 
   @Input() title:string;
+
+  @Output() onClick: EventEmitter<void> = new EventEmitter();
+
 
   registerOnChange(fn: any): void {
   }
