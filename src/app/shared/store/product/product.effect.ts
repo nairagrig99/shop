@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {ProductsAction, ProductsActionGetSuccess} from "./products.action";
-import {ProductsApiService} from "../api/products-api.service";
+import {ProductsApiService} from "../../api/products-api.service";
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {switchMap} from "rxjs";
 import {map} from "rxjs/operators";

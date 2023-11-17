@@ -1,5 +1,5 @@
 import {createSelector} from "@ngrx/store";
-import {ProductsModel} from "../api/models/products.model";
+import {ProductsModel} from "../../api/models/products.model";
 
 const productsStore = (state: any) => state?.products
 
@@ -17,3 +17,5 @@ export const weekendProductStore = createSelector(allProductStoreList,
 
 export const clogProductStore = createSelector(allProductStoreList,
   (state) => state?.filter((product: ProductsModel) => product.type === 'clog'))
+
+

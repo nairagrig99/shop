@@ -6,7 +6,8 @@ import {ProductReviewComponent} from './product-review/product-review.component'
 import {MatIconModule} from "@angular/material/icon";
 import {SelectComponent} from './select/select.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ButtonComponent } from './button/button.component';
+import {ButtonComponent} from './button/button.component';
+import {LocalStorageService} from "./api/localstorage.service";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ButtonComponent } from './button/button.component';
   ],
   exports: [
     ProductCardComponent
-  ]
+  ],
+  providers: [LocalStorageService]
 })
 export class SharedModule {
 }

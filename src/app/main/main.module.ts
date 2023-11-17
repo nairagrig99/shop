@@ -14,7 +14,12 @@ import {BestSellersComponent} from './components/best-sellers/best-sellers.compo
 import {SharedModule} from "../shared/shared.module";
 import {HttpClientModule} from "@angular/common/http"
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ProductBasketComponent } from './core/product-basket/product-basket.component';
+import {ActionReducer, MetaReducer, StoreModule} from "@ngrx/store";
+import {cartReducer} from "../shared/store/cart/cart.reducer";
+import {localStorageSync} from "ngrx-store-localstorage";
+import {EffectsModule} from "@ngrx/effects";
+import {CartEffect} from "../shared/store/cart/cart.effect";
+import {ProductCartComponent} from "./core/product-cart/product-cart.component";
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -27,8 +32,15 @@ const route: Routes = [
   }
 ]
 
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({keys: ['entities'], rehydrate: true})(reducer);
+}
+
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
+
+
 @NgModule({
-  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent, ProductBasketComponent],
+  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent, ProductCartComponent],
 
   imports: [CommonModule, MatToolbarModule,
     MatButtonModule,
@@ -38,6 +50,8 @@ const route: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    StoreModule.forFeature('entities', cartReducer, {metaReducers: metaReducers}),
+    EffectsModule.forFeature([CartEffect]),
     MatListModule, RouterModule.forChild(route)]
 })
 export class MainModule {
