@@ -17,7 +17,6 @@ export const productReducer = (state: ProductState = initialState, action: Produ
   switch (action.type) {
 
     case ProductsAction.GetSuccess:
-      console.log('state', state);
       return {
         ...state,
         products: action.payload

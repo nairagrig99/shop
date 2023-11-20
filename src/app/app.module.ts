@@ -43,9 +43,10 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature('products', productReducer, {metaReducers: metaReducers}),
+    StoreModule.forFeature('products', productReducer),
     EffectsModule.forRoot([ProductEffect]),
     StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
+    // EntityDataModule.forRoot(),
     environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],

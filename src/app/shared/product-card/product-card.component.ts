@@ -16,11 +16,9 @@ export class ProductCardComponent implements OnInit {
   @Input() product!: ProductsModel;
 
   public form!: FormGroup;
-  private localItemEnum = LocalStorageItemEnum;
 
   constructor(private formGroup: FormBuilder,
-              private store: Store,
-              private localStorage: LocalStorageService) {
+              private store: Store) {
   }
 
   ngOnInit(): void {
@@ -41,34 +39,14 @@ export class ProductCardComponent implements OnInit {
 
   public addProductToBasket(product: ProductsModel): void {
     const sizeFormControl = this.sizeControl().value;
+    const convertSizeFromStingToNumber = +sizeFormControl;
 
-    if (!!(+sizeFormControl)
-    ) {
+    if (!!(convertSizeFromStingToNumber)) {
       const mappedProduct = {
         ...product,
-        size: [+sizeFormControl]
+        size: [+convertSizeFromStingToNumber]
       }
-      this.store.dispatch(new AddCartAction(mappedProduct))
-
-      const getCart = this.localStorage.getLocalStorageItem(this.localItemEnum.CART);
-
-      const getEntity = this.localStorage.getLocalStorageItem(this.localItemEnum.ENTITIES);
-
-      const cartKeys = Object.keys(getCart);
-      const entityKeys = Object.keys(getEntity);
-
-      delete getEntity['undefined'];
-
-      if (cartKeys.length > entityKeys.length) {
-        cartKeys.forEach((key, index) => {
-          if (key !== entityKeys[index]) {
-            const copyEntity = Object.assign(getCart, getEntity);
-            this.localStorage.setLocalStorageItem(this.localItemEnum.CART, copyEntity)
-          }
-        })
-      } else {
-        this.localStorage.setLocalStorageItem(this.localItemEnum.CART, getEntity)
-      }
+      this.store.dispatch(new AddCartAction(mappedProduct));
     }
 
   }

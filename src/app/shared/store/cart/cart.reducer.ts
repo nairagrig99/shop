@@ -7,9 +7,6 @@ export const cartAdapter = createEntityAdapter<ProductsModel>({
   sortComparer: false
 });
 
-export interface State extends EntityState<ProductsModel> {
-}
-
 const defaultState = {
   entities: {},
   ids: [],
@@ -18,18 +15,14 @@ const defaultState = {
 export const initialState: EntityState<ProductsModel> = cartAdapter.getInitialState(defaultState);
 
 export function cartReducer(
-  state: State = initialState,
+  state: EntityState<ProductsModel> = initialState,
   action: CartActionType
 ) {
   switch (action.type) {
     case CartAction.AddProductsToCart:
-
-      return cartAdapter.addOne(action.payload, {
-          ...state
-        }
-      )
+      return cartAdapter.addOne(action.payload, state)
     default : {
-      return state.ids ? state : initialState
+      return state;
     }
 
   }

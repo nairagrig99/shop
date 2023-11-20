@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {cartStore} from "../../../shared/store/cart/cart.store";
+import {GetCartAction} from "../../../shared/store/cart/cart.action";
 
 @Component({
   selector: 'app-product-cart',
@@ -11,8 +12,7 @@ export class ProductCartComponent {
 
   constructor(private store: Store) {
     this.store.pipe(select(cartStore)).subscribe((state) => {
-      console.log('ssssssssssssssssss', state);
-
+      console.log('cartStore select', state);
     })
   }
 }

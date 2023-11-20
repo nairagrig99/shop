@@ -14,8 +14,8 @@ import {BestSellersComponent} from './components/best-sellers/best-sellers.compo
 import {SharedModule} from "../shared/shared.module";
 import {HttpClientModule} from "@angular/common/http"
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ActionReducer, MetaReducer, StoreModule} from "@ngrx/store";
-import {cartReducer} from "../shared/store/cart/cart.reducer";
+import {ActionReducer, INITIAL_STATE, MetaReducer, StoreModule} from "@ngrx/store";
+import {cartReducer, initialState} from "../shared/store/cart/cart.reducer";
 import {localStorageSync} from "ngrx-store-localstorage";
 import {EffectsModule} from "@ngrx/effects";
 import {CartEffect} from "../shared/store/cart/cart.effect";
@@ -50,8 +50,11 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    StoreModule.forFeature('entities', cartReducer, {metaReducers: metaReducers}),
-    EffectsModule.forFeature([CartEffect]),
+    StoreModule.forFeature('entities', cartReducer, {
+      metaReducers: metaReducers,
+      initialState: initialState
+    }),
+    // EffectsModule.forFeature([CartEffect]),
     MatListModule, RouterModule.forChild(route)]
 })
 export class MainModule {

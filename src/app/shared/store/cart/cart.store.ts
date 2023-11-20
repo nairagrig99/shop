@@ -1,3 +1,1 @@
-export const cartStore = (state: any) => {
-  return state['cart']
-}
+export const cartStore = (state: any) => state['entities'];
