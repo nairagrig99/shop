@@ -1,2 +1,10 @@
-<div></div>
+<section class="cart">
+  <div class="cart_block">
+    <app-product-cart-item *ngFor="let cart of carts;" [cart]="cart"
+    ></app-product-cart-item>
+  </div>
+  <div class="cart_total">
+    <span><b>Subtotal </b>  <span class="cart_total_sum">{{subTotal()}}</span></span>
+  </div>
+</section>
 

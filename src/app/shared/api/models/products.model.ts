@@ -7,5 +7,6 @@ export interface ProductsModel {
   reviews: number;
   type: string;
   bestSelleres: boolean;
-  image: string[]
+  image: string[];
+  count:number;
 }

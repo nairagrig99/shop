@@ -20,6 +20,8 @@ import {localStorageSync} from "ngrx-store-localstorage";
 import {EffectsModule} from "@ngrx/effects";
 import {CartEffect} from "../shared/store/cart/cart.effect";
 import {ProductCartComponent} from "./core/product-cart/product-cart.component";
+import { ProductCartItemComponent } from './core/product-cart/product-cart-item/product-cart-item.component';
+import {ProductCartService} from "./core/product-cart/service/product-cart.service";
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -27,7 +29,8 @@ const route: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      {path: 'best-selling', component: BestSellersComponent}
+      {path: 'best-selling', component: BestSellersComponent},
+      {path: 'cart', component: ProductCartComponent},
     ]
   }
 ]
@@ -40,7 +43,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 
 @NgModule({
-  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent, ProductCartComponent],
+  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent, ProductCartComponent, ProductCartItemComponent],
 
   imports: [CommonModule, MatToolbarModule,
     MatButtonModule,
@@ -54,8 +57,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
       metaReducers: metaReducers,
       initialState: initialState
     }),
-    // EffectsModule.forFeature([CartEffect]),
-    MatListModule, RouterModule.forChild(route)]
+    MatListModule, RouterModule.forChild(route)],
+  providers:[ProductCartService]
 })
 export class MainModule {
 }

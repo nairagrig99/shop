@@ -21,6 +21,10 @@ export function cartReducer(
   switch (action.type) {
     case CartAction.AddProductsToCart:
       return cartAdapter.addOne(action.payload, state)
+    case CartAction.UpdateCartProducts:
+      return cartAdapter.updateOne(action.payload, state)
+    case CartAction.RemoveProductFromCart:
+      return cartAdapter.removeOne(action.payload, state);
     default : {
       return state;
     }

@@ -1,0 +1,29 @@
+<div class="cart_side">
+  <div>
+    <img src="assets/images/products/{{cart.image[0]}}" width="150px">
+  </div>
+
+  <div>
+    <h2>{{cart.title}}</h2>
+    <p>{{cart.price}}</p>
+    <p>Size: {{cart.size[0]}}</p>
+  </div>
+
+  <div class="cart_side-choose-count">
+    <div class="cart_side-choose-count_block">
+      <button (click)="changeSelectedProductCount(cart,changeSelectedCount.DECREMENT)">-</button>
+
+      <input [(ngModel)]="selectedProductCount"
+             type="number">
+      
+      <button (click)="changeSelectedProductCount(cart,changeSelectedCount.INCREMENT)">+</button>
+
+    </div>
+    <mat-icon (click)="removeProductFromCart(cart.id)">delete</mat-icon>
+  </div>
+
+  <div>{{productTotal(cart.price)}} AMD</div>
+
+</div>
+
+

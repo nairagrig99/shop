@@ -1,16 +1,15 @@
 import {Action} from "@ngrx/store";
 import {ProductsModel} from "../../api/models/products.model";
+import {Update} from "@ngrx/entity";
 
 export enum CartAction {
-  GetCartProducts = '[Basket] Get Basket Products',
-  GetCartProductsSuccess = '[Basket] Get Basket Products ',
-  AddProductsToCart = '[Basket] Add Products To Basket',
-  AddProductsToCartSuccess = '[Basket] Add Products To Basket Success',
+  UpdateCartProducts = '[Cart] Update Basket Products',
+  GetCartProductsSuccess = '[Cart] Get Basket Products ',
+  AddProductsToCart = '[Cart] Add Products To Basket',
+  AddProductsToCartSuccess = '[Cart] Add Products To Basket Success',
+  RemoveProductFromCart = '[Cart] Remove Product From Cart'
 }
 
-export class GetCartAction implements Action {
-  readonly type = CartAction.GetCartProducts
-}
 
 export class GetCartActionSuccess implements Action {
   readonly type = CartAction.GetCartProductsSuccess
@@ -21,7 +20,8 @@ export class GetCartActionSuccess implements Action {
 
 export class AddCartAction implements Action {
   readonly type = CartAction.AddProductsToCart;
-  constructor(public payload: ProductsModel ) {
+
+  constructor(public payload: ProductsModel) {
   }
 
 }
@@ -29,8 +29,29 @@ export class AddCartAction implements Action {
 export class AddCartActionSuccess implements Action {
   readonly type = CartAction.AddProductsToCartSuccess;
 
-  constructor(public payload: ProductsModel) {}
+  constructor(public payload: ProductsModel) {
+  }
 
 }
 
-export type CartActionType = GetCartAction | AddCartAction | GetCartActionSuccess | AddCartActionSuccess;
+export class UpdateCartAction implements Action {
+  readonly type = CartAction.UpdateCartProducts
+
+  constructor(public payload: Update<ProductsModel>) {
+  }
+}
+
+export class RemoveCartAction implements Action {
+  readonly type = CartAction.RemoveProductFromCart;
+
+  constructor(public payload: number) {
+  }
+
+}
+
+export type CartActionType =
+  UpdateCartAction
+  | AddCartAction
+  | GetCartActionSuccess
+  | AddCartActionSuccess
+  | RemoveCartAction;

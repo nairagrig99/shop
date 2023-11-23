@@ -3,8 +3,7 @@ import {ProductsModel} from "../api/models/products.model";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {Store} from "@ngrx/store";
 import {AddCartAction} from "../store/cart/cart.action";
-import {LocalStorageService} from "../api/localstorage.service";
-import {LocalStorageItemEnum} from "../enums/local-storage-item.enum";
+
 
 @Component({
   selector: 'app-product-card',
@@ -44,12 +43,13 @@ export class ProductCardComponent implements OnInit {
     if (!!(convertSizeFromStingToNumber)) {
       const mappedProduct = {
         ...product,
-        size: [+convertSizeFromStingToNumber]
+        size: [+convertSizeFromStingToNumber],
+        count: 1
       }
       this.store.dispatch(new AddCartAction(mappedProduct));
     }
-
   }
+
 
 
 }
