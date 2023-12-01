@@ -18,4 +18,7 @@ export const weekendProductStore = createSelector(allProductStoreList,
 export const clogProductStore = createSelector(allProductStoreList,
   (state) => state?.filter((product: ProductsModel) => product.type === 'clog'))
 
+export const snowProductStore = createSelector(allProductStoreList,
+  (state) => state?.filter((product: ProductsModel) => product.type === 'snow'))
+
 

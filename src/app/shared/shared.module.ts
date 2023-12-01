@@ -9,7 +9,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ButtonComponent} from './button/button.component';
 import {LocalStorageService} from "./api/localstorage.service";
 
-
 @NgModule({
   declarations: [
     ProductCardComponent,

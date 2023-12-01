@@ -2,3 +2,6 @@
 
 html, body { height: 100%; }
 body { margin: 0;    font-family: 'Atak', sans-serif!important;}
+.mdc-list-item__content {
+  text-overflow: unset!important;
+}

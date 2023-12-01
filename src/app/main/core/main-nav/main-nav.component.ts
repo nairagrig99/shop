@@ -25,7 +25,6 @@ export class MainNavComponent {
   }
 
   public OpenShoppingCart(): void {
-    console.log('cart')
-    this.route.navigate(['/main/cart'])
+    this.route.navigate(['/main/cart']);
   }
 }

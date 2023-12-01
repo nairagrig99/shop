@@ -1,0 +1,427 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "rain",
+      "image": [
+        "sustainable-rainboot_1.webp",
+        "rainboot_2.webp",
+        "sustainable-details-rainboot_4.webp",
+        "sustainable-rainboot_1.webp"
+      ],
+      "price": "85,700.00",
+      "title": "Anyday Rain Boot In Black",
+      "reviews": 3,
+      "description": "Combining cloud-like comfort and waterproof protection, the Anyday Rain Boots keep you dry all day long. Carefully hand-made in Portugal from recycled nylon and a recycled rubber sole, so you can step confidently through any day.",
+      "bestSelleres": false
+    },
+    {
+      "id": 2,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "weekend_boot_1.webp",
+        "weekend_boot_2.webp",
+        "weekend_boot_3.webp",
+        "weekend_boot_4.webp"
+      ],
+      "price": "81,200.00",
+      "title": "The Scarlet Weekend Boot",
+      "reviews": 3,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 3,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "simone_weekend_boot_1.webp",
+        "simone_weekend_boot_2.webp",
+        "simone_weekend_boot_3.webp"
+      ],
+      "price": "81,700.00",
+      "title": "The Simone Weekend Boot",
+      "reviews": 4,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 4,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "farrah_weekend_boot_1.webp",
+        "farrah_weekend_boot_2.webp",
+        "farrah_weekend_boot_3.webp"
+      ],
+      "price": "81,200.00",
+      "title": "The Farrah Weekend Boot",
+      "reviews": 5,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 5,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "allegra_weekend_boot_1.webp",
+        "allegra_weekend_boot_2.webp",
+        "allegra_weekend_boot_3.webp"
+      ],
+      "price": "81,500.00",
+      "title": "The Allegra Weekend Boot",
+      "reviews": 3,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 6,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "beige_weekend_1.webp",
+        "beige_weekend_2.webp",
+        "beige_weekend_3.webp"
+      ],
+      "price": "81,900.00",
+      "title": "The Weekend Boot Beige",
+      "reviews": 2,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 7,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "black_weekend_1.webp",
+        "black_weekend_2.webp",
+        "black_weekend_3.webp"
+      ],
+      "price": "80,700.00",
+      "title": "The Weekend Boot in Black",
+      "reviews": 3,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 8,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "sage_weekend_1.webp",
+        "sage_weekend_2.webp",
+        "sage_weekend_3.webp"
+      ],
+      "price": "81,700.00",
+      "title": "The Weekend Boot in Sage",
+      "reviews": 3,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 9,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "indigo_weekend_boot_1.webp",
+        "indigo_weekend_boot_2.webp",
+        "indigo_weekend_boot_3.webp",
+        "indigo_weekend_boot_4.webp"
+      ],
+      "price": "80,7400.00",
+      "title": "The Weekend Boot in Indigo",
+      "reviews": 5,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": true
+    },
+    {
+      "id": 10,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "navy_weekend_boot_1.webp",
+        "navy_weekend_boot_2.webp",
+        "navy_weekend_boot_3.webp",
+        "navy_weekend_boot_4.webp"
+      ],
+      "price": "75,900.00",
+      "title": "The Weekend Boot in Navy",
+      "reviews": 3,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": false
+    },
+    {
+      "id": 11,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "cuero_weekend_boot_1.webp",
+        "cuero_weekend_boot_2.webp",
+        "cuero_weekend_boot_3.webp"
+      ],
+      "price": "75,900.00",
+      "title": "The Weekend Boot in Cuero",
+      "reviews": 2,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": false
+    },
+    {
+      "id": 12,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "weekend",
+      "image": [
+        "grey_weekend_boot_1.webp",
+        "grey_weekend_boot_2.webp",
+        "grey_weekend_boot_3.webp"
+      ],
+      "price": "75,900.00",
+      "title": "The Weekend Boot Z in Grey",
+      "reviews": 3,
+      "description": "Comfy all day. Cozy all year. Wear them with anything.\n\nThe Weekend Boots are vegan and sustainably made with over 95% natural and recycled materials. Their minimalist yet versatile design is made to take you wherever your day ends up - on a trail, in the park, at brunch or errands in the city, they've got you covered.",
+      "bestSelleres": false
+    },
+    {
+      "id": 13,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "clog",
+      "image": [
+        "clog_sage_1.webp",
+        "clog_sage_2.webp",
+        "clog_sage_3.webp"
+      ],
+      "price": "55,800.00",
+      "title": "The Terrus in Sage",
+      "reviews": 3,
+      "description": "Easy. Cool. Breathable.\n\nThe Terrus is a thoughtfully designed clog, made for the outdoors. Wear them around the city on a light hike, or sitting around by the lake with a book in hand. Just throw them on and stay easy, cool and comfy all day.",
+      "bestSelleres": false
+    },
+    {
+      "id": 14,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "clog",
+      "image": [
+        "beige_clog_1.webp",
+        "beige_clog_2.webp",
+        "beige_clog_3.webp"
+      ],
+      "price": "58,600.00",
+      "title": "The Terrus in Beige",
+      "reviews": 5,
+      "description": "Easy. Cool. Breathable.\n\nThe Terrus is a thoughtfully designed clog, made for the outdoors. Wear them around the city on a light hike, or sitting around by the lake with a book in hand. Just throw them on and stay easy, cool and comfy all day.",
+      "bestSelleres": false
+    },
+    {
+      "id": 15,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "clog",
+      "image": [
+        "allegra_clog_1.webp",
+        "allegra_clog_2.webp",
+        "allegra_clog_3.webp"
+      ],
+      "price": "58,600.00",
+      "title": "The Terrus in Allegra",
+      "reviews": 5,
+      "description": "Easy. Cool. Breathable.\n\nThe Terrus is a thoughtfully designed clog, made for the outdoors. Wear them around the city on a light hike, or sitting around by the lake with a book in hand. Just throw them on and stay easy, cool and comfy all day.",
+      "bestSelleres": false
+    },
+    {
+      "id": 16,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "rain",
+      "image": [
+        "green-rainboot_1.webp",
+        "green-rainboot_2.webp",
+        "green-rainboot_3.webp"
+      ],
+      "price": "109,900.00",
+      "title": "Anyday Rain Boot In Sage",
+      "reviews": 5,
+      "description": "Combining cloud-like comfort and waterproof protection, the Anyday Rain Boots keep you dry all day long. Carefully hand-made in Portugal from recycled nylon and a recycled rubber sole, so you can step confidently through any day.",
+      "bestSelleres": false
+    },
+    {
+      "id": 17,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "snow",
+      "image": [
+        "snow_boot_1.webp",
+        "snow_boot_2.webp",
+        "snow_boot_3.webp"
+      ],
+      "price": "127,000.00",
+      "title": "The Modern Winter Boot in Beige",
+      "reviews": 4,
+      "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
+      "bestSelleres": true
+    },
+    {
+      "id": 18,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "snow",
+      "image": [
+        "snow_black_1.webp",
+        "snow_black_2.webp",
+        "snow_black_3.webp",
+        "snow_black_4.webp"
+      ],
+      "price": "127,000.00",
+      "title": "The Modern Winter Boot in Black",
+      "reviews": 5,
+      "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
+      "bestSelleres": true
+    },
+    {
+      "id": 19,
+      "size": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "type": "snow",
+      "image": [
+        "snow_grey_1.webp",
+        "snow_grey_2.webp",
+        "snow_grey_3.webp"
+      ],
+      "price": "81,700.00",
+      "title": "The Modern Winter Boot in Black",
+      "reviews": 5,
+      "description": "The Modern Winter Boot is your cold-weather essential. Each pair is made with a durable Vibram sole and is waterproof for all-day wear. Wear them on your commute - keep them on long after you get there.",
+      "bestSelleres": false
+    }
+  ]
+}

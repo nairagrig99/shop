@@ -1,5 +1,6 @@
 export interface ProductsModel {
   id: number;
+  productId: number;
   title: string;
   description: string;
   price: string;
@@ -9,4 +10,5 @@ export interface ProductsModel {
   bestSelleres: boolean;
   image: string[];
   count:number;
+  isDuplicate?:boolean,
 }

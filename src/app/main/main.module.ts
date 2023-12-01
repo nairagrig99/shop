@@ -14,14 +14,17 @@ import {BestSellersComponent} from './components/best-sellers/best-sellers.compo
 import {SharedModule} from "../shared/shared.module";
 import {HttpClientModule} from "@angular/common/http"
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ActionReducer, INITIAL_STATE, MetaReducer, StoreModule} from "@ngrx/store";
+import {ActionReducer, MetaReducer, StoreModule} from "@ngrx/store";
 import {cartReducer, initialState} from "../shared/store/cart/cart.reducer";
 import {localStorageSync} from "ngrx-store-localstorage";
-import {EffectsModule} from "@ngrx/effects";
-import {CartEffect} from "../shared/store/cart/cart.effect";
 import {ProductCartComponent} from "./core/product-cart/product-cart.component";
-import { ProductCartItemComponent } from './core/product-cart/product-cart-item/product-cart-item.component';
+import {ProductCartItemComponent} from './core/product-cart/product-cart-item/product-cart-item.component';
 import {ProductCartService} from "./core/product-cart/service/product-cart.service";
+import {ToastComponent} from './core/toast/toast.component';
+import {RainSortComponent} from './components/rain-sort/rain-sort.component';
+import {WeekendSortComponent} from './components/weekend-sort/weekend-sort.component';
+import {AllShopComponent} from "./components/all-shop/all-shop.component";
+import {SnowSortComponent} from "./components/snow-sort/snow-sort.component";
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -31,9 +34,14 @@ const route: Routes = [
     children: [
       {path: 'best-selling', component: BestSellersComponent},
       {path: 'cart', component: ProductCartComponent},
+      {path: 'rain', component: RainSortComponent},
+      {path: 'weekend', component: WeekendSortComponent},
+      {path: 'all-shops', component: AllShopComponent},
+      {path: 'snow', component: SnowSortComponent},
     ]
   }
 ]
+
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({keys: ['entities'], rehydrate: true})(reducer);
@@ -43,9 +51,23 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 
 @NgModule({
-  declarations: [MainComponent, MainNavComponent, FooterComponent, HeaderComponent, BestSellersComponent, ProductCartComponent, ProductCartItemComponent],
-
-  imports: [CommonModule, MatToolbarModule,
+  declarations: [
+    MainComponent,
+    AllShopComponent,
+    SnowSortComponent,
+    MainNavComponent,
+    FooterComponent,
+    HeaderComponent,
+    BestSellersComponent,
+    ProductCartComponent,
+    ProductCartItemComponent,
+    ToastComponent,
+    RainSortComponent,
+    WeekendSortComponent
+  ],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
@@ -53,12 +75,16 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MatListModule,
     StoreModule.forFeature('entities', cartReducer, {
       metaReducers: metaReducers,
       initialState: initialState
     }),
-    MatListModule, RouterModule.forChild(route)],
-  providers:[ProductCartService]
+    RouterModule.forChild(route)],
+  exports: [
+    ToastComponent
+  ],
+  providers: [ProductCartService]
 })
 export class MainModule {
 }
