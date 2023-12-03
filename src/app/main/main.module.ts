@@ -25,6 +25,7 @@ import {RainSortComponent} from './components/rain-sort/rain-sort.component';
 import {WeekendSortComponent} from './components/weekend-sort/weekend-sort.component';
 import {AllShopComponent} from "./components/all-shop/all-shop.component";
 import {SnowSortComponent} from "./components/snow-sort/snow-sort.component";
+import {ValuesComponent} from './components/values/values.component';
 
 const route: Routes = [
   {path: '', redirectTo: 'best-selling', pathMatch: 'full'},
@@ -38,6 +39,7 @@ const route: Routes = [
       {path: 'weekend', component: WeekendSortComponent},
       {path: 'all-shops', component: AllShopComponent},
       {path: 'snow', component: SnowSortComponent},
+      {path: 'values', component: ValuesComponent},
     ]
   }
 ]
@@ -63,7 +65,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     ProductCartItemComponent,
     ToastComponent,
     RainSortComponent,
-    WeekendSortComponent
+    WeekendSortComponent,
+    ValuesComponent
   ],
   imports: [
     CommonModule,
