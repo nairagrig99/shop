@@ -1,17 +1,19 @@
 import {ProductsAction, ProductsActionType} from "./products.action";
-import {ProductsModel} from "../api/models/products.model";
+import {ProductsModel} from "../../api/models/products.model";
 import {State} from "@ngrx/store";
 
 export interface ProductState {
-  products: ProductsModel
+  products: ProductsModel | null
 }
 
-export const initialState = {
+// // @ts-ignore
+export const initialState: ProductState = {
   products: null
 }
 
-export const productReducer = (state: State<ProductState>, action: ProductsActionType) => {
-  console.log('reducerrrrrrrrrrrrrrr', action)
+// @ts-ignore
+
+export const productReducer = (state: ProductState = initialState, action: ProductsActionType) => {
   switch (action.type) {
 
     case ProductsAction.GetSuccess:

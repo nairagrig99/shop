@@ -3,22 +3,22 @@
 }
 
 @mixin flex-column {
-  display: flex;
+  @include flex-row;
   flex-direction: column;
 }
 
 @mixin flex-row-space-between {
-  display: flex;
+  @include flex-row;
   justify-content: space-between;
 }
 
 @mixin flex-row-space-evenly {
-  display: flex;
+  @include flex-row;
   justify-content: space-evenly;
 }
 
 @mixin flex-row-space-around {
-  display: flex;
+  @include flex-row;
   justify-content: space-around;
 }
 

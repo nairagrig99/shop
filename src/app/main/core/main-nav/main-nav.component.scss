@@ -5,7 +5,7 @@
 }
 
 .sidenav {
-  width: 300px;
+  width: 400px;
   text-align: center;
 }
 
@@ -39,8 +39,10 @@ mat-icon {
 }
 
 .mat-nav-list {
+
   &_desktop {
     @include flex-row-space-evenly;
+    text-align: center;
     flex: 0.5;
 
     a {
@@ -50,4 +52,6 @@ mat-icon {
       font-weight: lighter;
     }
   }
+
 }
+

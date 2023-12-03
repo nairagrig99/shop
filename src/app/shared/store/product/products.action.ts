@@ -1,10 +1,10 @@
 import {Action} from "@ngrx/store";
-import {ProductsModel} from "../api/models/products.model";
+import {ProductsModel} from "../../api/models/products.model";
 
 export enum ProductsAction {
   Get = '[Products] Get',
   GetSuccess = '[Products] GetSuccess',
-  GetError = '[Products] GetError',
+  GetError = '[Products] GetError'
 }
 
 export class ProductsActionGet implements Action {
@@ -14,7 +14,8 @@ export class ProductsActionGet implements Action {
 export class ProductsActionGetSuccess implements Action {
   readonly type = ProductsAction.GetSuccess
 
-  constructor(public payload: ProductsModel) {}
+  constructor(public payload: ProductsModel) {
+  }
 }
 
 export class ProductsActionGetError implements Action {
@@ -23,5 +24,6 @@ export class ProductsActionGetError implements Action {
   constructor(public payload: string) {
   }
 }
+
 
 export type ProductsActionType = ProductsActionGet | ProductsActionGetSuccess | ProductsActionGetError;

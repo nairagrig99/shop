@@ -1,0 +1,8 @@
+<section class="product-review" *ngFor="let star of reviewNumbers">
+  <div *ngIf="star<=review;else leftStar">
+    <mat-icon icon="star" class="product-review_yellow">star</mat-icon>
+  </div>
+  <ng-template #leftStar>
+    <mat-icon icon="star" class="product-review_black">star</mat-icon>
+  </ng-template>
+</section>

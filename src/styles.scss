@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0;    font-family: 'Atak', sans-serif; }
+body { margin: 0;    font-family: 'Atak', sans-serif!important;}
+.mdc-list-item__content {
+  text-overflow: unset!important;
+}

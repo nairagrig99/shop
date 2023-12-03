@@ -1,0 +1,3 @@
+<select class="select"  [(ngModel)]="optionValue" (ngModelChange)="changeSelectedValue($event)">
+  <option *ngFor="let size of sizeOptions;let i=index" > {{size}}</option>
+</select>

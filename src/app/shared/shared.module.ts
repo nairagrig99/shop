@@ -1,21 +1,32 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from "@angular/common/http";
-import {ProductsApiService} from "./api/products-api.service";
-import { ProductCardComponent } from './product-card/product-card.component';
-
+import {ProductCardComponent} from './product-card/product-card.component';
+import {ProductReviewComponent} from './product-review/product-review.component';
+import {MatIconModule} from "@angular/material/icon";
+import {SelectComponent} from './select/select.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ButtonComponent} from './button/button.component';
+import {LocalStorageService} from "./api/localstorage.service";
 
 @NgModule({
   declarations: [
-    ProductCardComponent
+    ProductCardComponent,
+    ProductReviewComponent,
+    SelectComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   exports: [
     ProductCardComponent
-  ]
+  ],
+  providers: [LocalStorageService]
 })
 export class SharedModule {
 }

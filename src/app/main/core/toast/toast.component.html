@@ -1,0 +1,8 @@
+<div class="toasts-wrapper" *ngIf="(toasts$ | async)?.length>0">
+  <a class="item" [@fadeInOut]="'in'">
+    <div class="item__text" >{{toasts$ | async}}</div>
+    <div class="close" (click)="removeToast()">
+    x
+    </div>
+  </a>
+</div>

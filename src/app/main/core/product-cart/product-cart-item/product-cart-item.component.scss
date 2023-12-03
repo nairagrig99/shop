@@ -1,0 +1,57 @@
+@import "src/app/shared/styles/@mixins";
+
+.cart_side {
+  @include flex-row-space-between;
+
+  &_description {
+    @include flex-row;
+    &_image {
+      margin-right: 45px;
+    }
+    h2 {
+      width: 250px;
+    }
+  }
+
+  &-choose-count {
+    @include flex-row;
+    align-items: center;
+    height: fit-content;
+    cursor: pointer;
+
+    &_block {
+      border: 1px solid grey;
+
+      margin-right: 8px;
+
+      input {
+        width: 40px;
+        font-size: 18px;
+        padding: 15px;
+        border: none;
+        outline: none;
+        color: grey;
+        text-align: center;
+      }
+
+      button {
+        padding: 14px;
+        border: none;
+        background: none;
+        font-size: 23px;
+        color: grey;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+mat-icon {
+  color: grey;
+}

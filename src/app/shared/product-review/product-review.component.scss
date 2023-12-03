@@ -1,0 +1,12 @@
+@import "src/app/shared/styles/@mixins";
+
+.product-review {
+
+  &_yellow {
+    color: yellow;
+  }
+
+  &_black {
+    color: black;
+  }
+}
