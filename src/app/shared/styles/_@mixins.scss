@@ -12,6 +12,11 @@
   justify-content: space-between;
 }
 
+@mixin flex-row-center {
+  @include flex-row;
+  justify-content: center;
+}
+
 @mixin flex-row-space-evenly {
   @include flex-row;
   justify-content: space-evenly;

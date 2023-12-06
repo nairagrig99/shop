@@ -55,3 +55,6 @@ mat-icon {
 
 }
 
+.mobile {
+  @include flex-row-center;
+}
