@@ -1,7 +1,104 @@
+@import "src/app/shared/styles/@mixins";
+
+
 .values {
+  font-family: 'Atak', sans-serif;
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 75px;
+  }
 
   &-blockOne {
     padding: 5rem;
     text-align: center;
+    max-width: 750px;
+    overflow-wrap: break-word;
+    margin: 0 auto;
   }
+
+  &-flexBoxTwo {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 45px;
+
+    @media (min-width: 700px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    align-items: center;
+
+    img {
+      object-fit: cover;
+      object-position: center center;
+      transition: opacity .4s cubic-bezier(.25, .46, .45, .94);
+      height: 500px;
+      width: 100%;
+    }
+
+
+    h1 {
+      text-align: left
+    }
+  }
+
+  &-imageBlock {
+    position: relative;
+    color: white;
+
+    img {
+      height: 466px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background: #000000;
+      opacity: .2;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    p {
+      font-size: 17px;
+    }
+
+    &_title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+
+  &-ourValues {
+    padding: 5rem;
+
+    &_flexBox {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+      @media (min-width: 700px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+.description {
+  font-family: 'Atak', sans-serif;
+  letter-spacing: 0.06rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 27px;
+  color: grey;
 }

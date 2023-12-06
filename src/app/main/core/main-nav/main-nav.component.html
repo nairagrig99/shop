@@ -5,7 +5,7 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="mobile">Menu</mat-toolbar>
     <mat-nav-list>
 
       <a mat-list-item routerLink="best-selling">Bestsellers</a>
@@ -15,7 +15,7 @@
       <a mat-list-item routerLink="all-shops">Shop All</a>
       <a mat-list-item routerLink="values">Values</a>
 
-      <mat-icon>shopping_cart</mat-icon>
+      <mat-icon (click)="OpenShoppingCart()">shopping_cart</mat-icon>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -26,14 +26,12 @@
      <img src="../../../../assets/images/logo.png" width="200">
       </span>
       <mat-nav-list *ngIf="!(isHandset$ | async)" class="mat-nav-list_desktop">
-
         <a mat-list-item routerLink="best-selling">Bestsellers</a>
         <a mat-list-item routerLink="rain">Rain </a>
         <a mat-list-item routerLink="snow">Snow </a>
         <a mat-list-item routerLink="weekend">Weekend </a>
         <a mat-list-item routerLink="all-shops">Shop All</a>
         <a mat-list-item routerLink="values">Values</a>
-
       </mat-nav-list>
       <button
         type="button"
