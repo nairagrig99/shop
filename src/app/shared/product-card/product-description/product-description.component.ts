@@ -9,6 +9,7 @@ import {AddCartAction, UpdateCartAction} from "../../store/cart/cart.action";
 import {ChangeSelectedProductCountEnum} from "../../enums/change-selected-product-count.enum";
 import {LocalStorageService} from "../../api/localstorage.service";
 import {ProductService} from "../service/product.service";
+import {ToastService} from "../../../main/core/toast/service/toast.service";
 
 @Component({
   selector: 'app-product-description',
@@ -28,7 +29,9 @@ export class ProductDescriptionComponent implements OnInit {
   constructor(private router: ActivatedRoute,
               private store: Store,
               private localStorageService: LocalStorageService,
-              private productCartService: ProductService) {
+              private productCartService: ProductService,
+              private toastService: ToastService) {
+
     this.productId = this.router.snapshot.paramMap.get('id');
   }
 
@@ -48,7 +51,7 @@ export class ProductDescriptionComponent implements OnInit {
     })
   }
 
-  public chooseSize(size:number): void {
+  public chooseSize(size: number): void {
     this.size = size;
   }
 
@@ -85,26 +88,22 @@ export class ProductDescriptionComponent implements OnInit {
         count: 1
       }
       this.store.dispatch(new AddCartAction(mappedProduct));
-      // this.toastService.addToast('Product added to cart');
+      this.toastService.addToast('Product added to cart');
+      return;
     }
 
     const isCountChanged = this.updateProductCount(getProductValues, product);
 
     // generate a new ID if a new size is added for the same product
     if (!isCountChanged) {
-      this.createNewProductWithChangedSize(product, getProductValues, getProductFromLocalStorage)
+      this.createNewProductWithChangedSize(product, getProductFromLocalStorage)
     }
   }
 
 
   private createNewProductWithChangedSize(
     product: ProductsModel,
-    getProductValues: ProductsModel[],
     getProductFromLocalStorage: {}): void {
-
-    const filteredValue = getProductValues.some((prod) => prod.size[0] !== this.size);
-
-    if (filteredValue) {
 
       const getId = this.productCartService.generateRandomId(Object.keys(getProductFromLocalStorage))
       const createNewProduct: ProductsModel = {
@@ -116,8 +115,8 @@ export class ProductDescriptionComponent implements OnInit {
       }
       this.store.dispatch(new AddCartAction(createNewProduct));
 
-      // this.toastService.addToast('Product added to cart');
-    }
+      this.toastService.addToast('Product added to cart');
+
   }
 
   //change the product quantity if the product is already added to the card
@@ -137,7 +136,7 @@ export class ProductDescriptionComponent implements OnInit {
           }
         }
 
-        // this.toastService.addToast('Product count changed');
+        this.toastService.addToast('Product count changed');
         this.store.dispatch(new UpdateCartAction(productForUpdate));
         return true;
       })
