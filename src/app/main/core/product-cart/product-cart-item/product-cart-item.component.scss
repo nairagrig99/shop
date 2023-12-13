@@ -1,8 +1,6 @@
 @import "src/app/shared/styles/@mixins";
 
 .cart_side {
-  //@include flex-row-space-between;
-
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 15px;
@@ -16,7 +14,6 @@
   }
 
   &_description {
-
     @include flex-row;
 
     &_image {

@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {ToastModel} from "../../../shared/model/toast.model";
-import {BehaviorSubject, Observable} from "rxjs";
+import { Observable} from "rxjs";
 import {ToastService} from "./service/toast.service";
 
 @Component({
@@ -31,7 +30,6 @@ export class ToastComponent {
     this.toasts$ = this.toasts.getToast();
   }
 
-  /** Удаление "тоста" */
   public removeToast(): void {
     this.toasts.removeToast();
   }
