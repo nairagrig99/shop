@@ -6,7 +6,7 @@
 
     <div>
       <h2>{{cart.title}}</h2>
-      <p>{{cart.price}}</p>
+      <b>{{cart.price}}</b>
       <p>Size: {{cart.size[0]}}</p>
     </div>
   </div>
@@ -23,7 +23,7 @@
     <mat-icon (click)="removeProductFromCart(cart.id)">delete</mat-icon>
   </div>
 
-  <div>{{productTotal(cart.price)}} AMD</div>
+  <b>{{productTotal(cart.price)}} AMD</b>
 
 </div>
 

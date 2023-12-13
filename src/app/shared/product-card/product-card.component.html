@@ -1,6 +1,6 @@
 <section class="product">
   <div class="product_card">
-    <div>
+    <div (click)="openProduct(product.id)">
       <img src="assets/images/products/{{product.image[0]}}">
     </div>
     <div class="product_card_description">
@@ -11,13 +11,13 @@
       <div class="product_card_description_price">{{product.price}} <span>AMD</span></div>
       <div class="product_card_description_sizes">
         <app-select
-                    [formControl]="form.get('sizes')"
-                    [type]="'number'"
-                    [sizeOptions]="product.size"
+          [formControl]="form.get('sizes')"
+          [type]="'number'"
+          [sizeOptions]="product.size"
         ></app-select>
       </div>
       <app-button [title]="'Add to cart'"
-      (onClick)="addProductToBasket(product)"
+                  (onClick)="addProductToBasket(product)"
       ></app-button>
     </div>
   </div>

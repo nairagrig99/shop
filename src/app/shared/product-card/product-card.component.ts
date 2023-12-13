@@ -5,6 +5,8 @@ import {Store} from "@ngrx/store";
 import {AddCartAction, UpdateCartAction} from "../store/cart/cart.action";
 import {ToastService} from "../../main/core/toast/service/toast.service";
 import {LocalStorageService} from "../api/localstorage.service";
+import {Router} from "@angular/router";
+import {ProductService} from "./service/product.service";
 
 
 @Component({
@@ -21,7 +23,9 @@ export class ProductCardComponent implements OnInit {
   constructor(private formGroup: FormBuilder,
               private store: Store,
               private toastService: ToastService,
-              private localStorageService: LocalStorageService) {
+              private localStorageService: LocalStorageService,
+              private productCartService: ProductService,
+              private route: Router) {
   }
 
   ngOnInit(): void {
@@ -41,8 +45,7 @@ export class ProductCardComponent implements OnInit {
 
   public addProductToBasket(product: ProductsModel): void {
 
-    const sizeFormControl = this.sizeControl().value;
-    const convertSize = +sizeFormControl;
+    const convertSize = Number(this.sizeControl().value);
 
     const getProductFromLocalStorage = this.localStorageService.getLocalStorageItem('entities');
 
@@ -68,7 +71,6 @@ export class ProductCardComponent implements OnInit {
     }
   }
 
-
   private createNewProductWithChangedSize(
     product: ProductsModel,
     convertSize: number,
@@ -79,7 +81,7 @@ export class ProductCardComponent implements OnInit {
 
     if (filteredValue) {
 
-      const getId = this.generateRandomId(Object.keys(getProductFromLocalStorage))
+      const getId = this.productCartService.generateRandomId(Object.keys(getProductFromLocalStorage))
       const createNewProduct: ProductsModel = {
         ...product,
         id: getId,
@@ -117,15 +119,9 @@ export class ProductCardComponent implements OnInit {
       })
   }
 
-
-  private generateRandomId(keys: string[]): number {
-    const generateId = Math.floor(Math.random() * 500) + 50;
-    const convertKeys = keys.map((num) => Number(num));
-
-    const isUniq = convertKeys.every((num) => num !== generateId)
-
-    // if id is not uniq call method again else return generateId
-    return isUniq ? generateId : this.generateRandomId(keys);
+  public openProduct(id: number): void {
+    this.route.navigate([`main/product/${id}`]);
   }
+
 }
 

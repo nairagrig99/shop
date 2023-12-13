@@ -7,8 +7,13 @@
     padding: 50px;
     @include flex-row-space-evenly;
 
-    &_box {
+    @media screen and (max-width: 700px) {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
 
+    &_box {
+      margin-right: 18px;
       @include flex-column;
 
       &_route {
@@ -28,9 +33,6 @@
         margin-bottom: 15px;
       }
 
-      &:first-child h1 {
-        //max-width: min(100%, 350px);
-      }
     }
   }
 }

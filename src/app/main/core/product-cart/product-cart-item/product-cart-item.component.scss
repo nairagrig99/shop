@@ -1,13 +1,28 @@
 @import "src/app/shared/styles/@mixins";
 
 .cart_side {
-  @include flex-row-space-between;
+  //@include flex-row-space-between;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 15px;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: auto auto;
+  }
+  @media screen and (max-width: 750px) {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
 
   &_description {
+
     @include flex-row;
+
     &_image {
       margin-right: 45px;
     }
+
     h2 {
       width: 250px;
     }
