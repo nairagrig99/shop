@@ -1,0 +1,48 @@
+<section>
+  <div class="product-info">
+
+    <div class="product-info_image">
+      <div class="product-info_image-img"
+           *ngFor="let prod of product?.image">
+        <img src="assets/images/products/{{prod}}">
+      </div>
+    </div>
+
+    <div class="product-info_description">
+      <h1 class="product-info_description_title">{{product?.title}}</h1>
+      <p class="product-info_description_price"><b>price</b> {{product?.price}} AMD</p>
+      <app-product-review
+        class="product-info_description_review"
+        [review]="product?.reviews">
+      </app-product-review>
+      <div class="product-info_description_size">
+        <p class="product-info_description_size_item"
+           *ngFor="let productSize of product?.size"
+           [ngClass]="{'selected':productSize===size}"
+           (click)="chooseSize(productSize)">
+          {{productSize}}
+        </p>
+      </div>
+      <div class="product-info_description-choose-count">
+        <div class="product-info_description-choose-count_block">
+          <button (click)="changeSelectedProductCount(product?.id,changeSelectedCount.DECREMENT)">-</button>
+
+          <input [(ngModel)]="selectedProductCount" type="number">
+
+          <button (click)="changeSelectedProductCount(product?.id,changeSelectedCount.INCREMENT)">+</button>
+
+        </div>
+      </div>
+      <div style="width: 100%; max-width: 500px;">
+        <button (click)="addProductToBasket(product)"
+                style="width: 100%; padding: 15px; background: none;border-radius: 7px;">
+          Add to cart
+        </button>
+      </div>
+      <div class="product-info_description_text">
+        <p>{{product?.description}}</p></div>
+    </div>
+
+
+  </div>
+</section>

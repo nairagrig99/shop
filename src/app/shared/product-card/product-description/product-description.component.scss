@@ -1,0 +1,124 @@
+@import 'src/app/shared/styles/@mixins';
+
+.product {
+  display: flex;
+
+  &-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 45px;
+
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: auto;
+    }
+
+    &_image {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: center;
+      gap: 10px;
+
+      img {
+        max-inline-size: 100%;
+        block-size: auto;
+      }
+
+      @media screen and (max-width: 280px) {
+        grid-template-columns: 200px;
+
+      }
+      @media screen and (max-width: 500px) {
+        grid-template-columns: 250px;
+      }
+
+    }
+
+    &_description {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &_title {
+        font-size: 37px;
+      }
+
+      &_price {
+        font-size: 20px;
+      }
+
+      &_review {
+        @include flex-row;
+      }
+
+      &_size {
+        @include flex-row;
+        width: 322px;
+        flex-wrap: wrap;
+
+        &_item {
+          border: 1px solid;
+          padding: 11px 24px;
+          background: whitesmoke;
+          margin-right: 15px;
+          border-radius: 50px;
+          color: black;
+          cursor: pointer;
+
+        }
+      }
+
+      &-choose-count {
+        @include flex-row;
+
+        align-items: center;
+        height: fit-content;
+        cursor: pointer;
+
+        &_block {
+          border: 1px solid grey;
+
+          margin-right: 8px;
+
+          input {
+            width: 40px;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            outline: none;
+            color: grey;
+            text-align: center;
+          }
+
+          button {
+            padding: 14px;
+            border: none;
+            background: none;
+            font-size: 23px;
+            color: grey;
+          }
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+
+      &_text {
+        width: 100%;
+        max-width: 500px;
+        font-size: 17px;
+        color: grey;
+      }
+    }
+
+
+  }
+}
+.selected{
+  background: black;
+  color: white;
+}
