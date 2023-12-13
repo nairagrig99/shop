@@ -53,7 +53,8 @@ export class ProductCardComponent implements OnInit {
 
     const isUniqProducts = getProductValues.every((prod) => prod.id !== product.id);
 
-    if (!getProductValues.length || isUniqProducts) {
+    if ((!getProductValues.length || isUniqProducts) && convertSize === 36) {
+      console.log('sssssssssssssssss')
       const mappedProduct = {
         ...product,
         size: [convertSize],
@@ -61,25 +62,21 @@ export class ProductCardComponent implements OnInit {
       }
       this.store.dispatch(new AddCartAction(mappedProduct));
       this.toastService.addToast('Product added to cart');
+      return;
     }
 
     const isCountChanged = this.updateProductCount(getProductValues, product, convertSize);
 
     // generate a new ID if a new size is added for the same product
     if (!isCountChanged) {
-      this.createNewProductWithChangedSize(product, convertSize, getProductValues, getProductFromLocalStorage)
+      this.createNewProductWithChangedSize(product, convertSize, getProductFromLocalStorage)
     }
   }
 
   private createNewProductWithChangedSize(
     product: ProductsModel,
     convertSize: number,
-    getProductValues: ProductsModel[],
     getProductFromLocalStorage: {}): void {
-
-    const filteredValue = getProductValues.some((prod) => prod.size[0] !== convertSize);
-
-    if (filteredValue) {
 
       const getId = this.productCartService.generateRandomId(Object.keys(getProductFromLocalStorage))
       const createNewProduct: ProductsModel = {
@@ -92,7 +89,6 @@ export class ProductCardComponent implements OnInit {
       this.store.dispatch(new AddCartAction(createNewProduct));
 
       this.toastService.addToast('Product added to cart');
-    }
   }
 
   //change the product quantity if the product is already added to the card
