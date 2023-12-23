@@ -7,7 +7,7 @@ import {allProductStoreList} from "../../../shared/store/product/products.store"
 @Component({
   selector: 'app-all-shop',
   templateUrl: './all-shop.component.html',
-  styleUrls: ['./all-shop.component.scss']
+  styleUrls: ['./all-shop.component.scss' ]
 })
 export class AllShopComponent {
   public products$: Observable<ProductsModel[]> = this.store.pipe(select(allProductStoreList));

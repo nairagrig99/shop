@@ -1,10 +1,17 @@
-<section class="cart">
+<section class="cart" *ngIf="carts.length;else emptyCart">
   <div class="cart_block">
-    <app-product-cart-item *ngFor="let cart of carts;" [cart]="cart"
+    <app-product-cart-item
+      *ngFor="let cart of carts;"
+      [cart]="cart"
     ></app-product-cart-item>
   </div>
   <div class="cart_total">
     <span><b>Subtotal </b>  <span class="cart_total_sum">{{subTotal()}}</span></span>
   </div>
 </section>
+
+<ng-template #emptyCart>
+  <section class="empty-product"> There are nothing selected product</section>
+</ng-template>
+
 

@@ -27,7 +27,7 @@ export class ProductCartComponent implements OnInit {
       return this.cartService.productTotal(cart.price, cart.count);
     })
     const countOfTotal = productPriceConvert.map((num) => Number(num))
-      .reduce((acc, next) => acc + next);
+      .reduce((acc, next) => acc + next,0);
 
     return this.cartService.numberFormatter(countOfTotal)
   }
