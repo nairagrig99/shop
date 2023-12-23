@@ -54,7 +54,7 @@ export class ProductCardComponent implements OnInit {
     const isUniqProducts = getProductValues.every((prod) => prod.id !== product.id);
 
     if ((!getProductValues.length || isUniqProducts) && convertSize === 36) {
-      console.log('sssssssssssssssss')
+
       const mappedProduct = {
         ...product,
         size: [convertSize],
