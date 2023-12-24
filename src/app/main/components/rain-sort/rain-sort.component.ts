@@ -12,6 +12,6 @@ export class RainSortComponent {
   public products$ = this.store.pipe(select(rainProductStore))
 
   constructor(private store: Store) {
-    this.products$.subscribe((s)=>{console.log('sssssssssssss',s)})
+    this.products$.subscribe()
   }
 }
