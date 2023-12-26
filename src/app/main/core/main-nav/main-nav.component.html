@@ -5,7 +5,9 @@
                [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                [mode]="(isHandset$ | async) ? 'over' : 'side'"
                [opened]="(isHandset$ | async) === false ">
-    <mat-toolbar class="mobile">Menu</mat-toolbar>
+    <div class="sidenav_close">
+      <mat-icon class="sidenav_close-icon" (click)="drawer.toggle()">close</mat-icon>
+    </div>
     <mat-nav-list>
       <a mat-list-item routerLink="best-selling">Bestsellers</a>
       <a mat-list-item routerLink="rain">Rain </a>
@@ -13,14 +15,18 @@
       <a mat-list-item routerLink="weekend">Weekend </a>
       <a mat-list-item routerLink="all-shops">Shop All</a>
       <a mat-list-item routerLink="values">Values</a>
-      <mat-icon (click)="OpenShoppingCart()">shopping_cart</mat-icon>
     </mat-nav-list>
+    <mat-icon (click)="OpenShoppingCart()">shopping_cart</mat-icon>
+
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <span>
-     <img src="../../../../assets/images/logo.png" width="200">
+      <img
+        routerLink="best-selling"
+        src="../../../../assets/images/logo.png" width="200">
+        
       </span>
       <mat-nav-list *ngIf="!(isHandset$ | async)" class="mat-nav-list_desktop">
         <a mat-list-item routerLink="best-selling">Bestsellers</a>
@@ -39,6 +45,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <mat-icon
+        class="sidenav_cart"
         *ngIf="!(isHandset$ | async)"
         (click)="OpenShoppingCart()">shopping_cart
       </mat-icon>

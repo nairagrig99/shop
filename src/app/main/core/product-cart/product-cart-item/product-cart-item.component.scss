@@ -15,6 +15,7 @@
 
   &_description {
     @include flex-row;
+    flex-wrap: wrap;
 
     &_image {
       margin-right: 45px;

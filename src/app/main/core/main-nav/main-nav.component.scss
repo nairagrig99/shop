@@ -2,11 +2,35 @@
 
 .sidenav-container {
   height: 100%;
+  cursor: pointer;
 }
 
 .sidenav {
   width: 400px;
   text-align: center;
+
+  &_close {
+    text-align: right;
+    padding: 15px;
+
+    &-icon {
+      padding: 10px;
+
+      &:hover {
+        background: #e7e0e0;
+        border-radius: 50px;
+      }
+    }
+  }
+
+  &_cart {
+    padding: 10px;
+
+    &:hover {
+      background: #e7e0e0;
+      border-radius: 50px;
+    }
+  }
 }
 
 .sidenav .mat-toolbar {
@@ -39,7 +63,6 @@ mat-icon {
 }
 
 .mat-nav-list {
-
   &_desktop {
     @include flex-row-space-evenly;
     text-align: center;
@@ -50,6 +73,7 @@ mat-icon {
       color: black;
       font-size: 15px;
       font-weight: lighter;
+      width: fit-content;
     }
   }
 }

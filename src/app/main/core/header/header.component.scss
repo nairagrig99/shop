@@ -1,11 +1,13 @@
 .header {
+  position: relative;
+
   &_image {
     height: 500px;
 
     img {
       height: 100%;
       width: 100%;
-      object-fit: none;
+      object-fit: cover;
       object-position: 30.2156% 84.8025%;
     }
 
@@ -23,7 +25,7 @@
 
   &_content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -43,4 +45,20 @@
       font-size: 30px;
     }
   }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+
+  .header_content {
+    //top: 50%;
+
+    h1 {
+      font-size: 30px
+    }
+
+    p {
+      font-size: 20px
+    }
+  }
+
 }

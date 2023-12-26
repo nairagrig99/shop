@@ -1,14 +1,12 @@
 <header class="header">
 
   <div class="header_image">
-<!--    <ng-content></ng-content>-->
-    <img src="assets/images/header/Beige_Collection_Page.webp"/>
+    <img src="assets/images/header/{{image$ | async}}"/>
   </div>
 
   <div class="header_content">
     <h1>Bestsellers</h1>
     <p>A collection of Your Favourite Footwear</p>
   </div>
-
 
 </header>

@@ -6,10 +6,10 @@ import {map} from "rxjs/operators";
 import {ProductsModel} from "../../api/models/products.model";
 import {Update} from "@ngrx/entity";
 import {AddCartAction, UpdateCartAction} from "../../store/cart/cart.action";
-import {ChangeSelectedProductCountEnum} from "../../enums/change-selected-product-count.enum";
 import {LocalStorageService} from "../../api/localstorage.service";
 import {ProductService} from "../service/product.service";
 import {ToastService} from "../../../main/core/toast/service/toast.service";
+import {ChangeSelectedProductCountEnum} from "../../enums/change-selected-product-count.enum";
 
 @Component({
   selector: 'app-product-description',
